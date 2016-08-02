@@ -1,0 +1,27 @@
+<div id="app-body">
+    <header id="title">
+        regExperience
+    </header>
+
+   <div id="main-container">
+       <div id="text-box">
+        <textarea id="input" class="card" spellcheck="false" placeholder="enter the string here" [(ngModel)]="text"></textarea>
+       </div>
+       <div id="regex-box" class="card">
+                <!--seperate property and event binding of ngModel for live regex check-->
+            <span>/</span><input type="text" placeholder="regex here.." id="reg-input" [ngModel]="regex" (ngModelChange)="onChange($event)"><span>/</span>
+           
+       </div>
+       <div id="out-box" class="card">
+          
+<!--click event is used just to toggle the value of 'replace' to show and hide the two components on btn click-->
+                <button id="tab-1" (click)="tabSwitch(1)">matches</button>
+                <button id="tab-2" (click)="tabSwitch(2)">replace</button>
+                  
+           <!--using ngIf to display match-detail only when tab-1 is clicked-->
+           <match-detail [match]="result" *ngIf="!replace"></match-detail>
+           <text-replace [rTxt]="text" [rx]="regex"></text-replace>
+       </div>
+            
+    </div>
+</div>

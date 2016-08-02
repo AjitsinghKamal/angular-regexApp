@@ -1,0 +1,15 @@
+#result-container{
+    width:80%;
+    height:70%;
+    margin:2% auto 2% auto;
+    padding:3%;
+    text-align: left;
+    font-family: 'Muli',sans-serif;
+    overflow: auto;
+    border:1px solid black;
+    
+}
+
+#result-container>ul{
+    list-style: none;
+}
